@@ -67,6 +67,12 @@
     function penBold() { ctx.lineWidth = 20 }
     function penMiddle() { ctx.lineWidth = 10 }
     function penThin() { ctx.lineWidth = 1 }
+    function onPenClick () {
+        var e = document.getElementById("penSize");
+        var value = e.options[e.selectedIndex].value;
+        ctx.lineWidth = Number(value);
+    }
+
 
     // 펜 색상 선택
     function colorBlack() { ctx.strokeStyle = "black"; }
@@ -98,6 +104,19 @@
         <input type="button" value="🖌️펜 굵게" onclick="penBold()">
         <input type="button" value="🖌️펜 보통" onclick="penMiddle()">
         <input type="button" value="🖌️펜 가늘게" onclick="penThin()">
+        <select size="1" id="penSize">
+            <option value=1 onclick="onPenClick()" selected>1</option>
+            <option value=2 onclick="onPenClick()">2</option>
+            <option value=4 onclick="onPenClick()">4</option>
+            <option value=6 onclick="onPenClick()">6</option>
+            <option value=8 onclick="onPenClick()">8</option>
+            <option value=10 onclick="onPenClick()">10</option>
+            <option value=12 onclick="onPenClick()">12</option>
+            <option value=14 onclick="onPenClick()">14</option>
+            <option value=16 onclick="onPenClick()">16</option>
+            <option value=18 onclick="onPenClick()">18</option>
+            <option value=20 onclick="onPenClick()">20</option>
+        </select>
         |
         <input type="button" value="⚫️검정" onclick="colorBlack()" style="background-color: grey;">
         <input type="button" value="🔴빨강" onclick="colorRed()" style="background-color: indianred;">
